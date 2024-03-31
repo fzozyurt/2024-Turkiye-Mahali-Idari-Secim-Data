@@ -18,10 +18,10 @@ jobs:
       - name: install python packages
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -r Secim_2024_Haber_Kaynaklarından_Veri_Çekme/requirements.txt
 
       - name: execute py script # run main.py
-        run: python Scripts/aa_getdata.py
+        run: python Secim_2024_Haber_Kaynaklarından_Veri_Çekme/Scripts/aa_getdata.py
   
   TRT-GetData:
     runs-on: ubuntu-latest
@@ -37,10 +37,10 @@ jobs:
       - name: install python packages
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -r Secim_2024_Haber_Kaynaklarından_Veri_Çekme/requirements.txt
 
       - name: execute py script # run main.py
-        run: python Scripts/trt_getdata.py 
+        run: python Secim_2024_Haber_Kaynaklarından_Veri_Çekme/Scripts/trt_getdata.py 
    
   NTV-GetData:
     runs-on: ubuntu-latest
@@ -56,10 +56,10 @@ jobs:
       - name: install python packages
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -r Secim_2024_Haber_Kaynaklarından_Veri_Çekme/requirements.txt
 
       - name: execute py script # run main.py
-        run: python Scripts/ntv_getdata.py
+        run: python Secim_2024_Haber_Kaynaklarından_Veri_Çekme/Scripts/ntv_getdata.py
   
   haberturk-GetData:
     runs-on: ubuntu-latest
@@ -75,10 +75,10 @@ jobs:
       - name: install python packages
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -r Secim_2024_Haber_Kaynaklarından_Veri_Çekme/requirements.txt
 
       - name: execute py script # run main.py
-        run: python Scripts/haberturk_getdata.py
+        run: python Secim_2024_Haber_Kaynaklarından_Veri_Çekme/Scripts/haberturk_getdata.py
 
   CNN-GetData:
     runs-on: ubuntu-latest
@@ -94,7 +94,7 @@ jobs:
       - name: install python packages
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -r Secim_2024_Haber_Kaynaklarından_Veri_Çekme/requirements.txt
 
       - name: execute py script # run main.py
-        run: python Scripts/cnn_getdata.py
+        run: python Secim_2024_Haber_Kaynaklarından_Veri_Çekme/Scripts/cnn_getdata.py
