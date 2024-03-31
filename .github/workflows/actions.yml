@@ -1,4 +1,4 @@
-name: SecimDataGet
+name: Secim_2024_Haber_Kaynaklarından_Veri_Çekme
 
 on:
   workflow_dispatch:
@@ -61,7 +61,7 @@ jobs:
       - name: execute py script # run main.py
         run: python Secim_2024_Haber_Kaynaklarından_Veri_Çekme/Scripts/ntv_getdata.py
   
-  haberturk-GetData:
+  HABERTURK-GetData:
     runs-on: ubuntu-latest
     steps:
       - name: checkout repo content
