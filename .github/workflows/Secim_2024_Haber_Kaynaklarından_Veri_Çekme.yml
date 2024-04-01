@@ -22,6 +22,19 @@ jobs:
 
       - name: execute py script # run main.py
         run: python Secim_2024_Haber_Kaynaklarından_Veri_Çekme/Scripts/aa_getdata.py
+
+      - name: commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git diff-index --quiet HEAD || (git commit -a -m "🤖 - Update Data" --allow-empty)
+
+      - name: push changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
   
   TRT-GetData:
     runs-on: ubuntu-latest
@@ -40,7 +53,20 @@ jobs:
           pip install -r Secim_2024_Haber_Kaynaklarından_Veri_Çekme/requirements.txt
 
       - name: execute py script # run main.py
-        run: python Secim_2024_Haber_Kaynaklarından_Veri_Çekme/Scripts/trt_getdata.py 
+        run: python Secim_2024_Haber_Kaynaklarından_Veri_Çekme/Scripts/trt_getdata.py
+
+      - name: commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git diff-index --quiet HEAD || (git commit -a -m "🤖 - Update Data" --allow-empty)
+
+      - name: push changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
    
   NTV-GetData:
     runs-on: ubuntu-latest
@@ -60,6 +86,19 @@ jobs:
 
       - name: execute py script # run main.py
         run: python Secim_2024_Haber_Kaynaklarından_Veri_Çekme/Scripts/ntv_getdata.py
+      
+      - name: commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git diff-index --quiet HEAD || (git commit -a -m "🤖 - Update Data" --allow-empty)
+
+      - name: push changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
   
   HURRIYET-GetData:
     runs-on: ubuntu-latest
@@ -79,6 +118,19 @@ jobs:
 
       - name: execute py script # run main.py
         run: python Secim_2024_Haber_Kaynaklarından_Veri_Çekme/Scripts/hurriyet_getdata.py
+      
+      - name: commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git diff-index --quiet HEAD || (git commit -a -m "🤖 - Update Data" --allow-empty)
+      
+      - name: push changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
 
   CNN-GetData:
     runs-on: ubuntu-latest
@@ -99,6 +151,19 @@ jobs:
       - name: execute py script # run main.py
         run: python Secim_2024_Haber_Kaynaklarından_Veri_Çekme/Scripts/cnn_getdata.py
 
+      - name: commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git diff-index --quiet HEAD || (git commit -a -m "🤖 - Update Data" --allow-empty)
+
+      - name: push changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
+
   Anka-GetData:
     runs-on: ubuntu-latest
     steps:
@@ -117,3 +182,16 @@ jobs:
 
       - name: execute py script # run main.py
         run: python Secim_2024_Haber_Kaynaklarından_Veri_Çekme/Scripts/anka_getdata.py
+
+      - name: commit files
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add -A
+          git diff-index --quiet HEAD || (git commit -a -m "🤖 - Update Data" --allow-empty)
+      
+      - name: push changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
