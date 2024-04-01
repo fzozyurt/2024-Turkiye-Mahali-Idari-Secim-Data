@@ -98,3 +98,22 @@ jobs:
 
       - name: execute py script # run main.py
         run: python Secim_2024_Haber_Kaynaklarından_Veri_Çekme/Scripts/cnn_getdata.py
+
+  Anka-GetData:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo content
+        uses: actions/checkout@v3 # checkout the repository content
+
+      - name: setup python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10" # install the python version needed
+
+      - name: install python packages
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r Secim_2024_Haber_Kaynaklarından_Veri_Çekme/requirements.txt
+
+      - name: execute py script # run main.py
+        run: python Secim_2024_Haber_Kaynaklarından_Veri_Çekme/Scripts/anka_getdata.py
