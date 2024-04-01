@@ -61,7 +61,7 @@ jobs:
       - name: execute py script # run main.py
         run: python Secim_2024_Haber_Kaynaklarından_Veri_Çekme/Scripts/ntv_getdata.py
   
-  HABERTURK-GetData:
+  HURRIYET-GetData:
     runs-on: ubuntu-latest
     steps:
       - name: checkout repo content
@@ -78,7 +78,7 @@ jobs:
           pip install -r Secim_2024_Haber_Kaynaklarından_Veri_Çekme/requirements.txt
 
       - name: execute py script # run main.py
-        run: python Secim_2024_Haber_Kaynaklarından_Veri_Çekme/Scripts/haberturk_getdata.py
+        run: python Secim_2024_Haber_Kaynaklarından_Veri_Çekme/Scripts/hurriyet_getdata.py
 
   CNN-GetData:
     runs-on: ubuntu-latest

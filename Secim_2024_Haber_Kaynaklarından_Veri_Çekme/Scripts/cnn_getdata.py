@@ -1,12 +1,6 @@
 import requests
-from pymongo import MongoClient
 import json
 import time
-
-# MongoDB bağlantısı oluştur
-client = MongoClient("mongodb://46.101.135.219:27017/")
-db = client["secim_verileri"]
-collection = db["anlik_veriler-CNN"]
 
 sehir=["adana",
 "adiyaman",
@@ -91,17 +85,22 @@ sehir=["adana",
 "duzce"
 ]
 
+
 def fetch_and_store_data():
     # Verileri al
     for i in sehir:
-        response = requests.get("https://secim.cnnturk.com/api/mayor/31-mart-2024/city/"+str(i))
+        
+        response = requests.get("https://secim.cnnturk.com/api/mayor/31-mart-2024/city/"+str(i),verify=False)
         election_data = response.json()
+
+        with open("../Data/CNN/"+i+".json","w",encoding='utf-8') as file:
+            json.dump(election_data,file,ensure_ascii=False)
     
         # Verileri MongoDB'ye aktar
-        collection.insert_one(election_data)
+        #collection.insert_one(election_data)
    
-    print("Veriler MongoDB'ye aktarıldı.")
+    print("Veriler Kaydedildi")
 
 # Belirli aralıklarla verileri al ve MongoDB'ye aktar
-while True:
-    fetch_and_store_data()
+
+fetch_and_store_data()

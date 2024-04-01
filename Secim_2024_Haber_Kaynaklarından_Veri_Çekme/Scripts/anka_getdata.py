@@ -2,6 +2,7 @@ import requests
 from pymongo import MongoClient
 import json
 import time
+import random
 
 # MongoDB bağlantısı oluştur
 client = MongoClient("mongodb://46.101.135.219:27017/")
@@ -91,26 +92,36 @@ sehir=["adana",
 "duzce"
 ]
 
+user_agent_list = [
+   "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/77.0.3865.90 Safari/537.36",
+   "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.130 Safari/537.36",
+   "Mozilla/5.0 (iPad; CPU OS 15_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) CriOS/104.0.5112.99 Mobile/15E148 Safari/604.1"
+]
+reffer_list=[
+   'https://secim.ankahaber.net'
+]
+headers = {
+   'Connection': 'keep-alive',
+   'Cache-Control': 'max-age=0',
+   'Upgrade-Insecure-Requests': '1',
+   'User-Agent': random.choice(user_agent_list),
+   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+   'Accept-Encoding': 'gzip, deflate',
+   'Accept-Language': 'en-US,en;q=0.9,fr;q=0.8',
+   'referer': random.choice(reffer_list)
+}
+
 def fetch_and_store_data():
     # Verileri al
     for i in range(1,82):
-        try:
-            response = requests.get("https://scdn.ankahaber.net/script/"+str(i)+".json",headers=headers,verify=False)
-            response.encoding="utf-8"
-            election_data = response.json()
-        except:
-            response = requests.get("https://scdn.ankahaber.net/script/"+str(i)+".json",headers=headers,verify=False)
-            response.encoding="utf-8"
-            election_data = response.json()            
+
+        response = requests.get("https://scdn.ankahaber.net/script/"+str(i)+".json",headers=headers,verify=False)
+        response.encoding="utf-8"
+        election_data = response.json()         
 
         with open("../Data/ANKA/"+sehir[i-1]+".json","w",encoding='utf-8') as file:
             json.dump(election_data,file,ensure_ascii=False)
-    
-        # Verileri MongoDB'ye aktar
-        #collection.insert_one(election_data)
    
     print("Veriler MongoDB'ye aktarıldı.")
 
-# Belirli aralıklarla verileri al ve MongoDB'ye aktar
-#while True:
 fetch_and_store_data()
