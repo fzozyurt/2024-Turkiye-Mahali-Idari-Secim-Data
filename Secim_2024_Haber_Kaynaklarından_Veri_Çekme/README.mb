@@ -1,0 +1,27 @@
+Genel Sonuç : Ülke geneli Parti Oyları
+
+
+s:{ Genel Bilgiler (Katılım sayısı v.b.)
+n: Toplam Sandık
+e: Toplam Seçmen
+d: Açılan Sandık
+dr: Açılma Oranı
+o: Katılım Sayısı
+or: Katılım Oranı
+g: Geçerli Oy
+gr: Geçerli Oy Sayısı }
+
+
+
+c:{ Genel Bilgiler (Parti Bazlı)
+r: Oy Yüzdesi
+
+p: Parti Adı
+a: Aday ?
+t: Toplam Oy
+}
+
+BuyuksehirBelediyesi (Büyük Şehir Olan Belediyeler)
+IlBelediyesi (Küçük Olan Belediyeler)
+IlceBelediyesi (İlçe belediye Başkanı)
+BeldeBelediyesi
