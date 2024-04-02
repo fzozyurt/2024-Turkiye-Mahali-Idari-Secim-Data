@@ -90,7 +90,7 @@ def fetch_and_store_data():
     # Verileri al
     for i in sehir:
         
-        response = requests.get("https://secim.cnnturk.com/api/mayor/31-mart-2024/city/"+str(i),verify=False)
+        response = requests.get("https://secim.cnnturk.com/api/mayor/31-mart-2024/city/"+str(i))
         election_data = response.json()
 
         with open("./Data/CNN/"+i+".json","w",encoding='utf-8') as file:
