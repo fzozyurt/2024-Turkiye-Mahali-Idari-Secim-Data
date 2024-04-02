@@ -119,7 +119,7 @@ def fetch_and_store_data():
         response.encoding="utf-8"
         election_data = response.json()         
 
-        with open("../Data/ANKA/"+sehir[i-1]+".json","w",encoding='utf-8') as file:
+        with open("./Data/ANKA/"+sehir[i-1]+".json","w",encoding='utf-8') as file:
             json.dump(election_data,file,ensure_ascii=False)
    
     print("Veriler MongoDB'ye aktarıldı.")

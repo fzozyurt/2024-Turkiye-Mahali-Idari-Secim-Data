@@ -92,7 +92,7 @@ def fetch_and_store_data():
         election_data = response.json()
     
         # Verileri MongoDB'ye aktar
-        with open("../Data/NTV/"+sehir[i-1]+".json","w",encoding='utf-8') as file:
+        with open("./Data/NTV/"+sehir[i-1]+".json","w",encoding='utf-8') as file:
             json.dump(election_data,file,ensure_ascii=False)
    
     print("Veriler Kaydedildi")

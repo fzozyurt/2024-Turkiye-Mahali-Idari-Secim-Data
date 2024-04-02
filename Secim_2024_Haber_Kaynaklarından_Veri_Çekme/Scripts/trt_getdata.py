@@ -13,7 +13,7 @@ def fetch_and_store_data():
         response = requests.get(str(i),verify=False)
         election_data = response.json()
     
-        with open("../Data/TRT/"+a+".json","w",encoding='utf-8') as file:
+        with open("./Data/TRT/"+a+".json","w",encoding='utf-8') as file:
             json.dump(election_data,file,ensure_ascii=False)
    
     print("Veriler Kaydedildi")
