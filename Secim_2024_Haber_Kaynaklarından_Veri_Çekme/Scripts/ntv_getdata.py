@@ -88,11 +88,11 @@ sehir=["adana",
 def fetch_and_store_data():
     # Verileri al
     for i in range(1,82):
-        response = requests.get("https://secim2024-storage.ntv.com.tr/secimsonuc2024/live/parliamentary/"+str(i)+".json",verify=False)
+        response = requests.get("https://secim2024-storage.ntv.com.tr/secimsonuc2024/live/parliamentary/"+str(i)+".json")
         election_data = response.json()
     
         # Verileri MongoDB'ye aktar
-        with open("../Data/NTV/"+sehir[i-1]+".json","w",encoding='utf-8') as file:
+        with open("./Data/NTV/"+sehir[i-1]+".json","w",encoding='utf-8') as file:
             json.dump(election_data,file,ensure_ascii=False)
    
     print("Veriler Kaydedildi")

@@ -115,13 +115,13 @@ def fetch_and_store_data():
     # Verileri al
     for i in range(1,82):
 
-        response = requests.get("https://scdn.ankahaber.net/script/"+str(i)+".json",headers=headers,verify=False)
+        response = requests.get("https://scdn.ankahaber.net/script/"+str(i)+".json",headers=headers)
         response.encoding="utf-8"
         election_data = response.json()         
 
-        with open("../Data/ANKA/"+sehir[i-1]+".json","w",encoding='utf-8') as file:
+        with open("./Data/ANKA/"+sehir[i-1]+".json","w",encoding='utf-8') as file:
             json.dump(election_data,file,ensure_ascii=False)
    
-    print("Veriler MongoDB'ye aktarıldı.")
+    print("Veriler Kaydedildi.")
 
 fetch_and_store_data()

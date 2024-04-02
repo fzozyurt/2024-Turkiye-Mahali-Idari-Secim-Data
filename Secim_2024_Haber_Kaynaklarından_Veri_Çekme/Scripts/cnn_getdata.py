@@ -93,7 +93,7 @@ def fetch_and_store_data():
         response = requests.get("https://secim.cnnturk.com/api/mayor/31-mart-2024/city/"+str(i),verify=False)
         election_data = response.json()
 
-        with open("../Data/CNN/"+i+".json","w",encoding='utf-8') as file:
+        with open("./Data/CNN/"+i+".json","w",encoding='utf-8') as file:
             json.dump(election_data,file,ensure_ascii=False)
     
         # Verileri MongoDB'ye aktar
