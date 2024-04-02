@@ -10,7 +10,7 @@ URL=[["TurkiyeGeneli","https://2024secim.trthaber.com/result/AA_YerelSecim2024_T
 def fetch_and_store_data():
     # Verileri al
     for a,i in URL:
-        response = requests.get(str(i),verify=False)
+        response = requests.get(str(i))
         election_data = response.json()
     
         with open("./Data/TRT/"+a+".json","w",encoding='utf-8') as file:

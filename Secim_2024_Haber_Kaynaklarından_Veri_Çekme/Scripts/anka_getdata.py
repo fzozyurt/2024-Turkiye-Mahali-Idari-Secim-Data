@@ -122,6 +122,6 @@ def fetch_and_store_data():
         with open("./Data/ANKA/"+sehir[i-1]+".json","w",encoding='utf-8') as file:
             json.dump(election_data,file,ensure_ascii=False)
    
-    print("Veriler MongoDB'ye aktarıldı.")
+    print("Veriler Kaydedildi.")
 
 fetch_and_store_data()

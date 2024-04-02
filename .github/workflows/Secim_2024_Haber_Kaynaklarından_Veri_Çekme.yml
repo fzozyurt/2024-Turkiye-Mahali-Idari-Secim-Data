@@ -42,6 +42,7 @@ jobs:
   
   TRT-GetData:
     runs-on: ubuntu-latest
+    needs: AA-GetData
     steps:
       - name: checkout repo content
         uses: actions/checkout@v3 # checkout the repository content
@@ -80,6 +81,7 @@ jobs:
    
   NTV-GetData:
     runs-on: ubuntu-latest
+    needs: TRT-GetData
     steps:
       - name: checkout repo content
         uses: actions/checkout@v3 # checkout the repository content
@@ -118,6 +120,7 @@ jobs:
   
   HURRIYET-GetData:
     runs-on: ubuntu-latest
+    needs: NTV-GetData
     steps:
       - name: checkout repo content
         uses: actions/checkout@v3 # checkout the repository content
@@ -156,6 +159,7 @@ jobs:
 
   CNN-GetData:
     runs-on: ubuntu-latest
+    needs: HURRIYET-GetData
     steps:
       - name: checkout repo content
         uses: actions/checkout@v3 # checkout the repository content
@@ -192,8 +196,9 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: main
 
-  Anka-GetData:
+  ANKA-GetData:
     runs-on: ubuntu-latest
+    needs: CNN-GetData
     steps:
       - name: checkout repo content
         uses: actions/checkout@v3 # checkout the repository content
