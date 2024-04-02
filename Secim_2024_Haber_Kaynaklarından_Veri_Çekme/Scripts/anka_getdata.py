@@ -115,7 +115,7 @@ def fetch_and_store_data():
     # Verileri al
     for i in range(1,82):
 
-        response = requests.get("https://scdn.ankahaber.net/script/"+str(i)+".json",headers=headers,verify=False)
+        response = requests.get("https://scdn.ankahaber.net/script/"+str(i)+".json",headers=headers)
         response.encoding="utf-8"
         election_data = response.json()         
 
