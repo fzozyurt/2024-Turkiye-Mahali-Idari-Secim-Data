@@ -15,7 +15,6 @@ jobs:
         with:
           python-version: "3.10" # install the python version needed
 
-
       - name: install python packages
         run: |
           cd Secim_2024_Haber_Kaynaklarından_Veri_Çekme
@@ -31,6 +30,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          git pull
           git add -A
           git diff-index --quiet HEAD || (git commit -a -m "🤖 - Update Data" --allow-empty)
 
@@ -52,9 +52,6 @@ jobs:
         with:
           python-version: "3.10" # install the python version needed
 
-      - name: Change File
-        run: cd Secim_2024_Haber_Kaynaklarından_Veri_Çekme
-
       - name: install python packages
         run: |
           cd Secim_2024_Haber_Kaynaklarından_Veri_Çekme
@@ -70,6 +67,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          git pull
           git add -A
           git diff-index --quiet HEAD || (git commit -a -m "🤖 - Update Data" --allow-empty)
 
@@ -91,9 +89,6 @@ jobs:
         with:
           python-version: "3.10" # install the python version needed
 
-      - name: Change File
-        run: cd Secim_2024_Haber_Kaynaklarından_Veri_Çekme
-
       - name: install python packages
         run: |
           cd Secim_2024_Haber_Kaynaklarından_Veri_Çekme
@@ -109,6 +104,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          git pull
           git add -A
           git diff-index --quiet HEAD || (git commit -a -m "🤖 - Update Data" --allow-empty)
 
@@ -130,9 +126,6 @@ jobs:
         with:
           python-version: "3.10" # install the python version needed
 
-      - name: Change File
-        run: cd Secim_2024_Haber_Kaynaklarından_Veri_Çekme
-
       - name: install python packages
         run: |
           cd Secim_2024_Haber_Kaynaklarından_Veri_Çekme
@@ -148,6 +141,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          git pull
           git add -A
           git diff-index --quiet HEAD || (git commit -a -m "🤖 - Update Data" --allow-empty)
       
@@ -187,6 +181,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          git pull
           git add -A
           git diff-index --quiet HEAD || (git commit -a -m "🤖 - Update Data" --allow-empty)
 
@@ -226,6 +221,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
+          git pull
           git add -A
           git diff-index --quiet HEAD || (git commit -a -m "🤖 - Update Data" --allow-empty)
       
