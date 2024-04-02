@@ -91,7 +91,7 @@ def fetch_and_store_data():
         response = requests.get("https://secim.hurriyet.com.tr/assets/yerel/data/iller/"+str(i)+".json")
         election_data = response.json()
 
-        with open("./Data/HURRIYET/"+i+".json","w",encoding='utf-8') as file:
+        with open("./Data/Hurriyet/"+i+".json","w",encoding='utf-8') as file:
             json.dump(election_data,file,ensure_ascii=False)
     
         # Verileri MongoDB'ye aktar
