@@ -15,20 +15,17 @@ jobs:
         with:
           python-version: "3.10" # install the python version needed
 
-      - name: Change File
-        run: | 
-          cd Secim_2024_Haber_Kaynaklarından_Veri_Çekme
-          ls
 
       - name: install python packages
         run: |
-          ls
+          cd Secim_2024_Haber_Kaynaklarından_Veri_Çekme
           python -m pip install --upgrade pip
-          ls
           pip install -r requirements.txt
 
       - name: execute py script # run main.py
-        run: python Scripts/aa_getdata.py
+        run: |
+          cd Secim_2024_Haber_Kaynaklarından_Veri_Çekme
+          python Scripts/aa_getdata.py
 
       - name: commit files
         run: |
@@ -59,11 +56,14 @@ jobs:
 
       - name: install python packages
         run: |
+          cd Secim_2024_Haber_Kaynaklarından_Veri_Çekme
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: execute py script # run main.py
-        run: python Scripts/trt_getdata.py
+        run: |
+          cd Secim_2024_Haber_Kaynaklarından_Veri_Çekme
+          python Scripts/trt_getdata.py
 
       - name: commit files
         run: |
@@ -94,11 +94,14 @@ jobs:
 
       - name: install python packages
         run: |
+          cd Secim_2024_Haber_Kaynaklarından_Veri_Çekme
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: execute py script # run main.py
-        run: python Scripts/ntv_getdata.py
+        run: |
+          cd Secim_2024_Haber_Kaynaklarından_Veri_Çekme
+          python Scripts/ntv_getdata.py
       
       - name: commit files
         run: |
@@ -129,11 +132,14 @@ jobs:
 
       - name: install python packages
         run: |
+          cd Secim_2024_Haber_Kaynaklarından_Veri_Çekme
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: execute py script # run main.py
-        run: python Scripts/hurriyet_getdata.py
+        run: |
+          cd Secim_2024_Haber_Kaynaklarından_Veri_Çekme
+          python Scripts/hurriyet_getdata.py
       
       - name: commit files
         run: |
@@ -164,11 +170,14 @@ jobs:
 
       - name: install python packages
         run: |
+          cd Secim_2024_Haber_Kaynaklarından_Veri_Çekme
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: execute py script # run main.py
-        run: python Scripts/cnn_getdata.py
+        run: |
+          cd Secim_2024_Haber_Kaynaklarından_Veri_Çekme
+          python Scripts/cnn_getdata.py
 
       - name: commit files
         run: |
@@ -199,11 +208,14 @@ jobs:
 
       - name: install python packages
         run: |
+          cd Secim_2024_Haber_Kaynaklarından_Veri_Çekme
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: execute py script # run main.py
-        run: python Scripts/anka_getdata.py
+        run: |
+          cd Secim_2024_Haber_Kaynaklarından_Veri_Çekme
+          python Scripts/anka_getdata.py
 
       - name: commit files
         run: |
